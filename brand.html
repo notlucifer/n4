@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class</title>
+	<script type="text/javascript">
+		var p=1,a,b,c,msg;
+		function cal()
+		{
+		if(document.frm1.b[0].checked==false && document.frm1.b[1].checked==false && document.frm1.b[2].checked==false &&document.frm1.b[3].checked==false )
+			{
+				alert("Please select a brand!!");
+				p=0;
+	        }
+		if(document.frm1.i1.checked==false && document.frm1.i2.checked==false && document.frm1.i3.checked==false &&document.frm1.i4.checked==false)
+			{
+				alert("Please enter items!!");
+				p=0;
+			}
+		if(document.frm1.q[0].checked==false && document.frm1.q[1].checked==false &&document.frm1.q[2].checked==false && document.frm1.q[3].checked==false &&document.frm1.q[4].checked==false)
+			{
+				alert("Please select quantity");
+				p=0;
+			}
+		if(p==1)
+		{
+			if(document.frm1.b[0].checked==true)
+				a=document.frm1.b[0].value;
+			else if(document.frm1.b[1].checked==true)
+				a=document.frm1.b[1].value;
+			else if(document.frm1.b[2].checked==true)
+				a=document.frm1.b[2].value;
+			else if(document.frm1.b[3].checked==true)
+				a=document.frm1.b[3].value;
+
+			if(document.frm1.i1.checked==true)
+				b"Keyboard";
+			if(document.frm1.i2.checked==true)
+				b="Mouse";
+			if(document.frm1.i3.checked==true)
+				b="Monitor";
+			if(document.frm1.i4.checked==true)
+				b="Laptop";
+
+			if(document.frm1.q[0].checked==true)
+				c=document.frm1.q[0].value;
+			else if(document.frm1.q[1].checked==true)
+				c=document.frm1.q[1].value;
+			else if(document.frm1.q[2].checked==true)
+				c=document.frm1.q[2].value;
+			else if(document.frm1.q[3].checked==true)
+				c=document.frm1.q[3].value;
+			else if(document.frm1.q[4].checked==true)
+				c=document.frm1.q[4].value;
+
+			msg="You have selected: <br> Brand: "+a+"<br> Items: "+b+"<br> Quantity:"+c;
+			document.getElementById("m").innerHTML=msg;
+			
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<form name="frm1">
+		<p>
+			Name:<input type="text" name="n">
+		</p>
+		<p>
+			Brand:<br>
+			DELL<input type="radio" name="b" value="DELL">
+			HP<input type="radio" name="b" value="HP">
+			LENOVO<input type="radio" name="b" value="LENOVO">
+			ASUS<input type="radio" name="b" value="ASUS">
+
+
+		</p>
+		<p>
+              Select Items:<br>
+                Keyboard <input type="checkbox" id="i1">
+                Mouse <input type="checkbox" id="i2">
+                Monitor <input type="checkbox" id="i3">
+                Laptop <input type="checkbox" id="i4">
+                
+
+
+		</p>
+
+		<p>
+
+			Select Quantity:<br>
+			1<input type="radio" name="q" value="1">
+			2<input type="radio" name="q" value="2">
+			3<input type="radio" name="q" value="3">
+			4<input type="radio" name="q" value="4">
+			5<input type="radio" name="q" value="5">
+		</p>
+		<p>
+			<input type="button" value="Proceed" onclick="cal()">
+		</p>
+		<p id="m"></p>
+	</form>
+
+</body>
+</html>
